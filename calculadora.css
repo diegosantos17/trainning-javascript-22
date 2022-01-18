@@ -14,7 +14,7 @@
 
 #containerCalculadora{
 	background-color: white;
-	width: 400px;
+	width: 430px;
 	border: 2px solid red;
 }
 
@@ -36,3 +36,35 @@
 }
 
 /* FIM: Estilos para o painel */
+
+/* INICIO: Calculadora Botões */
+#calculadora {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0;
+	list-style: none;
+	background-color: yellow;
+}
+
+.botao{
+	margin: 10px;
+    padding: 20px;
+    background-color: #efe7e7;
+    border: 1px solid rgb(179 157 157);
+    width: 45px;
+    height: 45px;
+    font-size: 2em;
+    text-align: center;
+    border-radius: 10px;
+	cursor: pointer;
+}
+
+.botao:hover {
+	background-color: #cccccc;
+	box-shadow: 5px 5px 10px 4px rgba(0,0,0,0.36);
+}
+
+.botao:active {
+	background-color: #aaa;	
+}
+/* FIM: Calculadora Botões */
