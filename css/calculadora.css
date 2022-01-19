@@ -1,5 +1,5 @@
 /* Para deixar minha calculadora cheiorsa */
-*{
+* {
 	margin: 0;
 }
 
@@ -12,14 +12,14 @@
 	align-items: center;
 }
 
-#containerCalculadora{
+#containerCalculadora {
 	background-color: white;
 	width: 430px;
 	border: 2px solid red;
 }
 
 /* INCIO: Estilos para o painel */
-#painel{
+#painel {
 	display: flex;
 	justify-content: space-between;
 	height: 120px;
@@ -28,33 +28,34 @@
 }
 
 #abrirHistorico,
-#fecharHistorico{	
-    padding: 5px;
-    font-size: 2em;
-    color: #9f9999;
+#fecharHistorico {
+	padding: 5px;
+	font-size: 2em;
+	color: #9f9999;
 }
 
 #abrirHistorico:hover,
-#fecharHistorico:hover{
+#fecharHistorico:hover {
 	color: black;
 	cursor: pointer;
 }
 
-#expressaoAoVivo{
+#expressaoAoVivo {
 	font-size: 5em;
 }
 
-#expressaoDigitada{
+#expressaoDigitada {
 	display: flex;
-    justify-content: flex-end;
-    font-size: 1.3em;
+	justify-content: flex-end;
+	font-size: 1.3em;
 }
 
-#expressoes{
+#expressoes {
 	border: 2px solid green;
 }
 
-#historicoLista{
+#historicoLista {
+	visibility: hidden;
 	position: absolute;
 	margin-left: 10px;
 	margin-top: 10px;
@@ -64,25 +65,23 @@
 	border-radius: 10px;
 	width: 380px;
 	min-height: 100px;
-	box-shadow: 1px 0px 9px 4px rgba(0,0,0,0.32);
+	box-shadow: 1px 0px 9px 4px rgba(0, 0, 0, 0.32);
 }
 
-#historicoListaItens{
+#historicoListaItens {	
 	margin-top: 20px;
 }
 
 #historicoListaItens .expressao,
-#historicoListaItens .resultado{
+#historicoListaItens .resultado {
 	padding: 10px;
 	border-radius: 5px;
 	border: 1px solid lightgray;
 	color: rgb(69, 69, 173);
 }
 
-#historicoListaItens .sinal{
-
+#historicoListaItens .sinal {
 }
-
 
 /* FIM: Estilos para o painel */
 
@@ -95,25 +94,34 @@
 	background-color: yellow;
 }
 
-.botao{
+.botao {
 	margin: 10px;
-    padding: 20px;
-    background-color: #efe7e7;
-    border: 1px solid rgb(179 157 157);
-    width: 45px;
-    height: 45px;
-    font-size: 2em;
-    text-align: center;
-    border-radius: 10px;
+	padding: 20px;
+	background-color: #efe7e7;
+	border: 1px solid rgb(179 157 157);
+	width: 45px;
+	height: 45px;
+	font-size: 2em;
+	text-align: center;
+	border-radius: 10px;
 	cursor: pointer;
 }
 
 .botao:hover {
-	background-color: #cccccc;
-	box-shadow: 5px 5px 10px 4px rgba(0,0,0,0.36);
+	background-color: #ccc;
+	box-shadow: 5px 5px 10px 4px rgba(0, 0, 0, 0.36);
 }
 
 .botao:active {
-	background-color: #aaa;	
+	background-color: #aaa;
+}
+
+.operacao{
+	background-color: #aaa;
+}
+
+.calcular {
+	background-color: cornflowerblue;
+	color: #fff;
 }
 /* FIM: Calculadora Botões */

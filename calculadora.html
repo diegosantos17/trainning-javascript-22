@@ -16,7 +16,7 @@
 					<div id="abrirHistorico"><i class="fas fa-history"></i></div>
 					<div id="expressoes">
 						<div id="expressaoDigitada">33+44=</div>
-						<div id="expressaoAoVivo">77</div>
+						<div id="expressaoAoVivo"></div>
 					</div>
 					<div id="historicoLista">
 						<span id="fecharHistorico"
@@ -30,29 +30,32 @@
 					</div>
 				</div>
 				<ul id="calculadora">
-					<li class="botao">(</li>
-					<li class="botao">)</li>
-					<li class="botao">%</li>
-					<li class="botao">AC</li>
-					<li class="botao">7</li>
-					<li class="botao">8</li>
-					<li class="botao">9</li>
-					<li class="botao">/</li>
-					<li class="botao">4</li>
-					<li class="botao">5</li>
-					<li class="botao">6</li>
-					<li class="botao">x</li>
-					<li class="botao">1</li>
-					<li class="botao">2</li>
-					<li class="botao">3</li>
-					<li class="botao">-</li>
-					<li class="botao">0</li>
-					<li class="botao">.</li>
-					<li class="botao">=</li>
-					<li class="botao">+</li>
+					<li class="botao operacao" data-value="(">(</li>
+					<li class="botao operacao" data-value=")">)</li>
+					<li class="botao operacao" data-value="%">%</li>
+					<li class="botao operacao" data-value="AC">AC</li>
+					<li class="botao" data-value="7">7</li>
+					<li class="botao" data-value="8">8</li>
+					<li class="botao" data-value="9">9</li>
+					<li class="botao operacao" data-value="/">/</li>
+					<li class="botao" data-value="4">4</li>
+					<li class="botao" data-value="5">5</li>
+					<li class="botao" data-value="6">6</li>
+					<li class="botao operacao" data-value="x">x</li>
+					<li class="botao" data-value="1">1</li>
+					<li class="botao" data-value="2">2</li>
+					<li class="botao" data-value="3">3</li>
+					<li class="botao operacao" data-value="-">-</li>
+					<li class="botao" data-value="0">0</li>
+					<li class="botao" data-value=".">.</li>
+					<li class="botao calcular" data-value="=">=</li>
+					<li class="botao operacao" data-value="+">+</li>
 				</ul>
 			</div>
 		</div>
-		<script src="calculadora.js"></script>
+		<script src="scripts/calculadora.js"></script>
+		<script>
+			configurar();
+		</script>
 	</body>
 </html>
