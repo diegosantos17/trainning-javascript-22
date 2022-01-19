@@ -80,6 +80,10 @@
 	color: rgb(69, 69, 173);
 }
 
+#historicoListaItens .item-historico{
+	margin-bottom: 25px;
+}
+
 #historicoListaItens .sinal {
 }
 

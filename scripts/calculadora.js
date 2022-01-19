@@ -18,7 +18,27 @@ function configurarAbrirHistorico() {
 	abrirHistorico.addEventListener("click", (event) => {
 		let historicoLista = document.getElementById("historicoLista");
 		historicoLista.style.visibility = "visible";
+
+		carregarHistorico();
 	});
+}
+
+function carregarHistorico(){
+	let historico = JSON.parse(localStorage.getItem("historico"));
+	let historicoListaItens = document.getElementById("historicoListaItens");
+	historicoListaItens.innerHTML = "";
+	
+	for (const item of historico) {
+		let itemFormatado = `
+					<div class="item-historico">
+					<span class="expressao">${item.expressao}</span>
+					<span class="sinal"> = </span>
+					<span class="resultado">${item.resultado}</span>
+					</div>
+		`;
+
+		historicoListaItens.innerHTML += itemFormatado;
+	}
 }
 
 function configurarFecharHistorico() {
@@ -69,6 +89,28 @@ function configurarClicksTeclas() {
 }
 //#endregion
 
+//#region | Historico
+function registrarHistorico(expressao, resultado) {
+	console.log("registrarHistorico", expressao, resultado);
+
+	let historicoCalculos = [];
+
+	if (localStorage.getItem("historico")) {
+		historicoCalculos = JSON.parse(localStorage.getItem("historico"));
+	}
+
+	let historicoItem = {
+		expressao: expressao,
+		resultado: resultado,
+	};
+
+	historicoCalculos.push(historicoItem);
+
+	localStorage.setItem("historico", JSON.stringify(historicoCalculos));
+}
+
+//#endregion
+
 //#region | Operações da calculadora
 function calcular() {
 	console.log("Criar mecanismo de calculo");
@@ -83,18 +125,19 @@ function calcular() {
 
 	let resultado = 0;
 
-	if(expressaoSoma){
-		resultado = parseFloat(expressaoSoma[0]) + parseFloat(expressaoSoma[1]); 
-	} else if (expressaoSubtracao){
+	if (expressaoSoma) {
+		resultado = parseFloat(expressaoSoma[0]) + parseFloat(expressaoSoma[1]);
+	} else if (expressaoSubtracao) {
 		console.log("Implemetar subtração");
-	} else if(expressaoDivisao){
+	} else if (expressaoDivisao) {
 		console.log("Implemetar divisão");
 	} else {
 		console.log("Implemetar multiplicação");
 	}
 
-
 	expressaoDigitada.innerText = expressaoAoVivo.innerText + " = ";
+	registrarHistorico(expressaoAoVivo.innerText, resultado);
+
 	expressaoAoVivo.innerText = resultado;
 }
 //#endregionCriar
