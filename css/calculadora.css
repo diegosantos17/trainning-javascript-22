@@ -22,18 +22,67 @@
 #painel{
 	display: flex;
 	justify-content: space-between;
-	height: 100px;
+	height: 120px;
 	background-color: white;
 	border: 2px solid orange;
 }
 
-#historico{
-	border: 2px solid blue;
+#abrirHistorico,
+#fecharHistorico{	
+    padding: 5px;
+    font-size: 2em;
+    color: #9f9999;
+}
+
+#abrirHistorico:hover,
+#fecharHistorico:hover{
+	color: black;
+	cursor: pointer;
+}
+
+#expressaoAoVivo{
+	font-size: 5em;
+}
+
+#expressaoDigitada{
+	display: flex;
+    justify-content: flex-end;
+    font-size: 1.3em;
 }
 
 #expressoes{
 	border: 2px solid green;
 }
+
+#historicoLista{
+	position: absolute;
+	margin-left: 10px;
+	margin-top: 10px;
+	background-color: white;
+	padding: 15px;
+	border: 1px solid gray;
+	border-radius: 10px;
+	width: 380px;
+	min-height: 100px;
+	box-shadow: 1px 0px 9px 4px rgba(0,0,0,0.32);
+}
+
+#historicoListaItens{
+	margin-top: 20px;
+}
+
+#historicoListaItens .expressao,
+#historicoListaItens .resultado{
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid lightgray;
+	color: rgb(69, 69, 173);
+}
+
+#historicoListaItens .sinal{
+
+}
+
 
 /* FIM: Estilos para o painel */
 

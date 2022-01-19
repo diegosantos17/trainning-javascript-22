@@ -1,44 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Calculadora</title>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Calculadora</title>
 
-	<link rel="stylesheet" href="calculadora.css">
-</head>
-<body>
-	<div class="container">
-		<div id="containerCalculadora">
-			<div id="painel">
-				<div id="historico">historico</div>
-				<div id="expressoes">expressoes</div>
+		<link rel="stylesheet" href="css/all.css" />
+		<link rel="stylesheet" href="css/calculadora.css" />
+	</head>
+	<body>
+		<div class="container">
+			<div id="containerCalculadora">
+				<div id="painel">
+					<div id="abrirHistorico"><i class="fas fa-history"></i></div>
+					<div id="expressoes">
+						<div id="expressaoDigitada">33+44=</div>
+						<div id="expressaoAoVivo">77</div>
+					</div>
+					<div id="historicoLista">
+						<span id="fecharHistorico"
+							><i class="fas fa-history"></i
+						></span>
+						<div id="historicoListaItens">
+							<span class="expressao">45 + 10</span
+							><span class="sinal"> = </span>
+							<span class="resultado">55</span>
+						</div>
+					</div>
+				</div>
+				<ul id="calculadora">
+					<li class="botao">(</li>
+					<li class="botao">)</li>
+					<li class="botao">%</li>
+					<li class="botao">AC</li>
+					<li class="botao">7</li>
+					<li class="botao">8</li>
+					<li class="botao">9</li>
+					<li class="botao">/</li>
+					<li class="botao">4</li>
+					<li class="botao">5</li>
+					<li class="botao">6</li>
+					<li class="botao">x</li>
+					<li class="botao">1</li>
+					<li class="botao">2</li>
+					<li class="botao">3</li>
+					<li class="botao">-</li>
+					<li class="botao">0</li>
+					<li class="botao">.</li>
+					<li class="botao">=</li>
+					<li class="botao">+</li>
+				</ul>
 			</div>
-			<ul id="calculadora">
-				<li class="botao">(</li>
-				<li class="botao">)</li>
-				<li class="botao">%</li>
-				<li class="botao">AC</li>
-				<li class="botao">7</li>
-				<li class="botao">8</li>
-				<li class="botao">9</li>
-				<li class="botao">/</li>
-				<li class="botao">4</li>
-				<li class="botao">5</li>
-				<li class="botao">6</li>
-				<li class="botao">x</li>
-				<li class="botao">1</li>
-				<li class="botao">2</li>
-				<li class="botao">3</li>
-				<li class="botao">-</li>
-				<li class="botao">0</li>
-				<li class="botao">.</li>
-				<li class="botao">=</li>
-				<li class="botao">+</li>
-			</ul>
 		</div>
-	</div>
-	<script src="calculadora.js"></script>
-</body>
+		<script src="calculadora.js"></script>
+	</body>
 </html>
