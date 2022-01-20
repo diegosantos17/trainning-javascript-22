@@ -8,9 +8,37 @@ function configurar() {
 	configurarAbrirHistorico();
 	configurarFecharHistorico();
 	configurarClicksTeclas();
+	configurarTeclasTeclado();
 }
 
+function configurarTeclasTeclado() {
+	document.addEventListener("keydown", (event) => {
+		console.log(event.keyCode, event.shiftKey);
+
+		if (event.keyCode >= 48 && event.keyCode <= 57) {
+			let valor = String.fromCharCode(event.keyCode);
+			registrarExpressaoPainel(valor);
+		} else if (event.keyCode == 27) {// ESC
+			limparPainel();
+		} else if (event.keyCode == 13) {// Enter
+			calcular();
+		}
+	});
+}
 //#region | Funções do painel
+function registrarExpressaoPainel(valor) {
+	let expressaoAoVivo = document.getElementById("expressaoAoVivo");
+	expressaoAoVivo.innerText += valor;
+}
+
+function limparPainel() {
+	let expressaoAoVivo = document.getElementById("expressaoAoVivo");
+	expressaoAoVivo.innerText = "";
+
+	let expressaoDigitada = document.getElementById("expressaoDigitada");
+	expressaoDigitada.innerText += valor;
+}
+
 function configurarAbrirHistorico() {
 	console.log("configurarAbrirHistorico");
 
@@ -23,11 +51,11 @@ function configurarAbrirHistorico() {
 	});
 }
 
-function carregarHistorico(){
+function carregarHistorico() {
 	let historico = JSON.parse(localStorage.getItem("historico"));
 	let historicoListaItens = document.getElementById("historicoListaItens");
 	historicoListaItens.innerHTML = "";
-	
+
 	for (const item of historico) {
 		let itemFormatado = `
 					<div class="item-historico">
