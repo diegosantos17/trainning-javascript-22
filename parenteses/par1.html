@@ -48,9 +48,8 @@
 			var xhttp = new XMLHttpRequest();
 			xhttp.onreadystatechange = function () {
 				if (this.readyState == 4 && this.status == 200) { // HTTP STATUS CODE
-
-					let responseJson = "";
-					var resultado = JSON.parse(this.responseText);					
+										
+					var resultado = JSON.parse(this.responseText);
 					mostrarEndereco(resultado);
 				}
 			};
