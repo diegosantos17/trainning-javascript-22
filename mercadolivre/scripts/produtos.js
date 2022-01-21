@@ -10,11 +10,14 @@ function buscarProdutos() {
 	//JEITO 2 (concatenar - interpolação)
 	let endpoint = `http://localhost:3000/produtos`;
 
-	xhttp.open("GET", endpoint, true); // PREPARADANDO A REQUEST
+	xhttp.open("GET", endpoint, false); // PREPARADANDO A REQUEST
 	xhttp.send(); // REQUEST (REQUISIÇÃO) 			
 }
 
 function mostrarProdutos(produtos){
 	let produtosView = document.getElementById("produtosView");
-	produtosView.innerText = produtos;
+
+	for (const produto of produtos) {
+		produtosView.innerHTML += produto.descricao + "<br>";		
+	}
 }
