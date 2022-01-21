@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+	<form action="">
+		<input type="text" id="cep" placeholder="Digite o CEP">
+		<input id="botaoBuscar" type="button" value="Buscar">
+	</form>
+
+	<div id="cepLocalizado">
+
+	</div>
+
+	<script>
+		function configurarConsultaCep(){
+			console.log("Opa")
+
+			let cep = document.getElementById("cep");		
+			
+			// Configurar o campo de cep (com máscara)
+			cep.addEventListener("keyup", (event) => {
+				console.log(event.target.value);
+
+				if(event.target.value.length == 5)
+				{
+					event.target.value += "-";
+				}
+
+			});
+
+			// Configurar botão de busca
+			let botaoBuscar = document.getElementById("botaoBuscar");	
+
+			// Configurar o campo de cep (com máscara)
+			botaoBuscar.addEventListener("click", (event) => {
+				let cepDigitado = document.getElementById("cep").value;				
+				buscarCep(cepDigitado);							
+			});
+		}
+
+		function buscarCep(cepDigitado) {
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function () {
+				if (this.readyState == 4 && this.status == 200) { // HTTP STATUS CODE
+
+					let responseJson = "";
+					var resultado = JSON.parse(this.responseText);					
+					mostrarEndereco(resultado);
+				}
+			};
+			
+			//JEITO 2 (concatenar - interpolação)
+			let endpoint = `https://viacep.com.br/ws/${cepDigitado}/json/`;
+
+			xhttp.open("GET", endpoint, true); // PREPARADANDO A REQUEST
+			xhttp.send(); // REQUEST (REQUISIÇÃO) 			
+		}
+
+		function mostrarEndereco(endereco){
+			let cepLocalizado = document.getElementById("cepLocalizado");
+			cepLocalizado.innerText = endereco.logradouro;
+		}
+		configurarConsultaCep();
+	</script>
+</body>
+</html>

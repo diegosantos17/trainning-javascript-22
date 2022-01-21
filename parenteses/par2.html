@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div id="demo"></div>
+		<script>
+			function get() {
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function () {
+					if (this.readyState == 4 && this.status == 200) { // HTTP STATUS CODE
+
+						let resultado = JSON.parse(this.responseText);
+						document.getElementById("demo").innerHTML =
+							resultado.logradouro;
+					}
+				};
+
+				let url = "https://viacep.com.br/ws/01001000/json/";
+				let endpoint = "https://viacep.com.br/ws/01001000/json/";
+
+				xhttp.open("GET", endpoint, true); // PREPARADANDO A REQUEST
+				xhttp.send(); // REQUEST (REQUISIÇÃO) 
+			}
+
+			get();
+
+			// https://pipedream.com/@diegosantos17/trainning-alunos-p_OKCOmKY/edit
+			function post(){
+				var xmlhttp = new XMLHttpRequest(); // new HttpRequest instance
+				var theUrl = "https://enpehsq4mavhd4d.m.pipedream.net";
+				xmlhttp.open("POST", theUrl);
+				xmlhttp.setRequestHeader(
+					"Content-Type",
+					"application/json;charset=UTF-8"
+				);
+				xmlhttp.send(
+					JSON.stringify({
+						email: "hello@user.com",
+						response: { name: "Tester" },
+					})
+				);
+			}
+
+			post();
+
+		</script>
+	</body>
+</html>
