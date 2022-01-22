@@ -11,22 +11,98 @@
 	<body>
 		<div class="container">
 			<div class="topo">
-				<input type="text" name="" placeholder="Buscar produtos" id="txtBusca">
-				<input id="btnBuscar" type="button" value="Buscar">
+				<input
+					type="text"
+					name=""
+					placeholder="Buscar produtos"
+					id="txtBusca"
+				/>
+				<input id="btnBuscar" type="button" value="Buscar" />
 			</div>
 			<div class="banners">banner</div>
 			<div class="vantagens">vantagens</div>
+			<!-- Esse já vem do banco \o/ -->
 			<div id="ofertas" class="ofertas"></div>
-		</div>		
+
+			<input
+				type="text"
+				name=""
+				placeholder="Digite o nome do produto"
+				id="nomeProduto"
+			/>
+			<input
+				type="text"
+				name=""
+				placeholder="Insira a URL da imagem"
+				id="urlCapaImagem"
+			/>
+			<input type="text" name="" id="" /><input
+				type="text"
+				name=""
+				placeholder="Digite o categoria"
+				id=""
+			/><input
+				type="text"
+				name=""
+				placeholder="Digite a quantidade"
+				id=""
+			/><input
+				type="text"
+				name=""
+				placeholder="Digite a parcelas sem juros"
+				id=""
+			/><input
+				type="text"
+				name=""
+				placeholder="Possui frete gratis"
+				id=""
+			/><input
+				type="text"
+				name=""
+				placeholder="Possui entrega full"
+				id=""
+			/><input
+				type="text"
+				name=""
+				placeholder="URL imagem 1"
+				id=""
+			/>
+			<input
+				type="text"
+				name=""
+				placeholder="URL imagem 2"
+				id=""
+			/>
+			<input
+				type="text"
+				name=""
+				placeholder="URL imagem 3"
+				id=""
+			/>
+			<input
+				type="text"
+				name=""
+				placeholder="URL imagem 4"
+				id=""
+			/>
+			<input id="btnCriar" type="button" value="Criar produto" />
+		</div>
 
 		<script src="scripts/produtos.js"></script>
 		<script>
 			let btnBuscar = document.getElementById("btnBuscar");
-			btnBuscar.addEventListener("click", (event) =>{
+			btnBuscar.addEventListener("click", (event) => {
 				let txtBusca = document.getElementById("txtBusca").value;
-				
+
 				buscarProdutos(txtBusca);
-			})
+			});
+
+			let btnCriar = document.getElementById("btnCriar");
+			btnCriar.addEventListener("click", (event) => {
+				let txtBusca = document.getElementById("txtBusca").value;
+
+				criarProduto();
+			});
 
 			buscarProdutos();
 		</script>
