@@ -1,0 +1,43 @@
+.container{	
+	background-color: gray;
+	height: 100vh;
+	width: 100%;
+}
+
+
+/* INICIO: Ofertas */
+.ofertas{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	background-color: yellow;
+	border: 1px solid red;	
+}
+
+.ofertas .produto {
+	border: 1px solid green;
+	margin: 15px;
+	padding: 10px;
+	background-color: white;
+}
+
+.produto img {
+	width: 100px;
+}
+
+.ofertas .produto .preco{
+	display: block;
+}
+.ofertas .produto .parcelas{
+	display: block;
+}
+
+.ofertas .produto .frete{
+	display: block;
+    font-size: 10px;
+    font-weight: bold;
+    color: #3ea93e;
+}
+
+
+/* FIM: Ofertas */

@@ -1,19 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Mercado Livre</title>
-</head>
-<body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Mercado Livre</title>
 
+		<link rel="stylesheet" href="css/estilos.css" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="topo">topo</div>
+			<div class="banners">banner</div>
+			<div class="vantagens">vantagens</div>
+			<div id="ofertas" class="ofertas"></div>
+		</div>
+		<!-- <input id="btnBuscarProdutos" type="button" value="Buscar Produtos">
+	<br>
+	<h1>Lista de produtos</h1>
+	<hr>
 	<div id="produtosView">
-	</div>
-	
-	<script src="scripts/produtos.js"></script>
-	<script>	
-		buscarProdutos();
-	</script>
-</body>
+		
+	</div> -->
+
+		<script src="scripts/produtos.js"></script>
+		<script>
+			// let btnBuscarProdutos = document.getElementById("btnBuscarProdutos");
+			// btnBuscarProdutos.addEventListener("click", (event) =>{
+			// 	buscarProdutos();
+			// })
+
+			buscarProdutos();
+		</script>
+	</body>
 </html>

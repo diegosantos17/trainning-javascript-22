@@ -15,9 +15,21 @@ function buscarProdutos() {
 }
 
 function mostrarProdutos(produtos){
-	let produtosView = document.getElementById("produtosView");
+	let ofertas = document.getElementById("ofertas");
 
 	for (const produto of produtos) {
-		produtosView.innerHTML += produto.descricao + "<br>";		
+
+		let templateOferta = 
+		`<div class="produto">
+			<img src="${produto.imageCapa}" />
+			<div>
+				<span class="preco">R$ ${produto.precoOriginal}<span class="ofertaPreco">${produto.descontoEmPercentagem} OFF</span></span>
+				<span class="parcelas">${produto.parcelasMaximaSemJuros}x <span class="valorParcela">R$ -</span></span>
+				<span class="frete">${produto.freteGratis ? "Frete Grátis" : ""} <span class="freteFull">${produto.freteFull ? "FULL" : ""}</span></span>
+				<span class="descricao">${produto.descricao}</span>
+			</div>					
+		</div>`;
+
+		ofertas.innerHTML += templateOferta;		
 	}
 }
