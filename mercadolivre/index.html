@@ -10,25 +10,23 @@
 	</head>
 	<body>
 		<div class="container">
-			<div class="topo">topo</div>
+			<div class="topo">
+				<input type="text" name="" placeholder="Buscar produtos" id="txtBusca">
+				<input id="btnBuscar" type="button" value="Buscar">
+			</div>
 			<div class="banners">banner</div>
 			<div class="vantagens">vantagens</div>
 			<div id="ofertas" class="ofertas"></div>
-		</div>
-		<!-- <input id="btnBuscarProdutos" type="button" value="Buscar Produtos">
-	<br>
-	<h1>Lista de produtos</h1>
-	<hr>
-	<div id="produtosView">
-		
-	</div> -->
+		</div>		
 
 		<script src="scripts/produtos.js"></script>
 		<script>
-			// let btnBuscarProdutos = document.getElementById("btnBuscarProdutos");
-			// btnBuscarProdutos.addEventListener("click", (event) =>{
-			// 	buscarProdutos();
-			// })
+			let btnBuscar = document.getElementById("btnBuscar");
+			btnBuscar.addEventListener("click", (event) =>{
+				let txtBusca = document.getElementById("txtBusca").value;
+				
+				buscarProdutos(txtBusca);
+			})
 
 			buscarProdutos();
 		</script>
